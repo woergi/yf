@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2025-10-05 12:44:05",
+        "date_fetched": "2025-10-05 15:23:19",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -35,6 +35,11 @@
                 },
                 "CashFlowStatement": {
                     "Cash Dividends Paid": -15234000000
+                },
+                "Valuation": {
+                    "Price Earnings Ratio": 39.212765,
+                    "Price to Book Ratio": 58.23064,
+                    "Dividend Yield": 0.4
                 }
             },
             "historical_data": {
@@ -151,6 +156,24 @@
                     "2021": {
                         "Cash Dividends Paid": -14467000000
                     }
+                },
+                "Valuation": {
+                    "2024": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2023": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2022": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2021": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    }
                 }
             }
         },
@@ -183,6 +206,11 @@
                 },
                 "CashFlowStatement": {
                     "Cash Dividends Paid": -24082000000
+                },
+                "Valuation": {
+                    "Price Earnings Ratio": 37.98458,
+                    "Price to Book Ratio": 11.1970825,
+                    "Dividend Yield": 0.71
                 }
             },
             "historical_data": {
@@ -315,6 +343,24 @@
                     "2021": {
                         "Cash Dividends Paid": "N/A"
                     }
+                },
+                "Valuation": {
+                    "2025": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2024": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2023": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2022": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    }
                 }
             }
         },
@@ -347,6 +393,11 @@
                 },
                 "CashFlowStatement": {
                     "Cash Dividends Paid": -7363000000
+                },
+                "Valuation": {
+                    "Price Earnings Ratio": 26.12886,
+                    "Price to Book Ratio": 8.182971,
+                    "Dividend Yield": 0.34
                 }
             },
             "historical_data": {
@@ -479,6 +530,24 @@
                     "2020": {
                         "Cash Dividends Paid": "N/A"
                     }
+                },
+                "Valuation": {
+                    "2024": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2023": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2022": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2021": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    }
                 }
             }
         },
@@ -511,6 +580,11 @@
                 },
                 "CashFlowStatement": {
                     "Cash Dividends Paid": "N/A - Feld nicht gefunden"
+                },
+                "Valuation": {
+                    "Price Earnings Ratio": 33.46189,
+                    "Price to Book Ratio": 7.010635,
+                    "Dividend Yield": "N/A"
                 }
             },
             "historical_data": {
@@ -650,6 +724,28 @@
                     },
                     "2021": {
                         "Cash Dividends Paid": "N/A"
+                    }
+                },
+                "Valuation": {
+                    "2024": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2023": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2022": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2021": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
+                    "2020": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
                     }
                 }
             }

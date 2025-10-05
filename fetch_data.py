@@ -92,7 +92,7 @@ def extract_historical_data(dataframe, fields_list):
                 
     return historical_data
 
-# --- Hauptlogik für einen einzelnen Ticker ---
+# --- Hauptlogik für einen einzelnen Ticker (Angepasst) ---
 
 def fetch_financial_data_for_ticker(ticker_symbol):
     """Ruft alle aktuellen und historischen Daten für ein Ticker-Symbol ab."""
@@ -113,17 +113,45 @@ def fetch_financial_data_for_ticker(ticker_symbol):
         
         # 4. Daten extrahieren und strukturieren
         
+        # --- LATEST DATA ---
+        
+        # NEU: Bewertungskennzahlen aus info abrufen
+        pe_ratio_latest = info.get('trailingPE') or info.get('forwardPE') # Trailing bevorzugt, sonst Forward
+        pb_ratio_latest = info.get('priceToBook')
+        # NEU: Dividendenrendite aus info abrufen
+        dividend_yield_latest = info.get('dividendYield')
+
         latest_data = {
             "BalanceSheet": extract_latest_values(balance_sheet, FIELDS_TO_EXTRACT["BalanceSheet"]),
             "IncomeStatement": extract_latest_values(income_statement, FIELDS_TO_EXTRACT["IncomeStatement"]),
             "CashFlowStatement": extract_latest_values(cash_flow_statement, FIELDS_TO_EXTRACT["CashFlowStatement"]),
+            # NEU: Bewertungskennzahlen (aktuell)
+            "Valuation": {
+                "Price Earnings Ratio": pe_ratio_latest if pe_ratio_latest is not None else "N/A",
+                "Price to Book Ratio": pb_ratio_latest if pb_ratio_latest is not None else "N/A",
+                "Dividend Yield": dividend_yield_latest if dividend_yield_latest is not None else "N/A"
+            }
         }
 
+        # --- HISTORICAL DATA ---
         historical_output = {
             "BalanceSheet": extract_historical_data(balance_sheet, FIELDS_TO_EXTRACT["BalanceSheet"]),
             "IncomeStatement": extract_historical_data(income_statement, FIELDS_TO_EXTRACT["IncomeStatement"]),
             "CashFlowStatement": extract_historical_data(cash_flow_statement, FIELDS_TO_EXTRACT["CashFlowStatement"]),
         }
+        
+        # NEU: Historische Bewertungskennzahlen (Platzhalter)
+        historical_valuation = {}
+        # Wir verwenden die Jahre aus dem IncomeStatement als Grundlage für die Zeitstempel
+        for year in historical_output["IncomeStatement"].keys():
+             historical_valuation[year] = {
+                 # HINWEIS: Hier müssten Sie eine separate Berechnung (Kurse * EPS/BV) einfügen.
+                 # Derzeit nur Platzhalter.
+                 "Price Earnings Ratio": "N/A (Historische Berechnung nötig)",
+                 "Price to Book Ratio": "N/A (Historische Berechnung nötig)"
+             }
+        historical_output["Valuation"] = historical_valuation
+
 
         return {
             "company_name": company_name,
@@ -136,7 +164,7 @@ def fetch_financial_data_for_ticker(ticker_symbol):
         FAILED_TICKERS.append(ticker_symbol)
         return None
 
-# --- Hauptprogramm ---
+# --- Hauptprogramm (unverändert) ---
 
 if __name__ == "__main__":
     final_output = {

@@ -83,10 +83,35 @@
         return num; // Gibt "N/A" oder andere Strings zurück
     };
 
-    // NEUE FUNKTION: Formatiert Kennzahlen (KGV, KBV) ohne bedingte Formatierung
-    const formatRatio = (num) => {
+    // FUNKTION: Formatiert Kennzahlen (KGV, KBV) mit BEDINGTER FORMATIERUNG für KGV
+    const formatRatio = (num, metric) => {
+        if (typeof num !== 'number') {
+            return '<td class="text-end bg-warning-subtle">N/A</td>';
+        }
+        
+        let cellClass = 'text-end';
+        const numFormatted = num.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+        // KGV ANPASSUNG: Wenn Kennzahl KGV ist und Wert > 15
+        if (metric === "KGV (Price Earnings Ratio)") {
+            if (num > 15) {
+                // Rot bei KGV > 15 (häufig ein Zeichen für höhere Bewertung)
+                cellClass += ' table-danger fw-bold'; 
+            } else if (num > 0) {
+                 // Grün bei KGV <= 15 und > 0 (häufig ein Zeichen für niedrigere/faire Bewertung)
+                cellClass += ' table-success';
+            }
+        }
+        // Für KBV bleibt die Klasse standardmäßig 'text-end'
+
+        return `<td class="${cellClass}">${numFormatted}</td>`;
+    };
+
+    // FUNKTION: Formatiert die Dividendenrendite als Prozentsatz
+    const formatDividendYield = (num) => {
         if (typeof num === 'number') {
-            return `<td class="text-end">${num.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>`;
+            const ratioFormatted = (num/100).toLocaleString('de-DE', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            return `<td class="text-end">${ratioFormatted}</td>`;
         }
         return '<td class="text-end bg-warning-subtle">N/A</td>';
     };
@@ -209,8 +234,6 @@
                     const historicalBS = companyData.historical_data.BalanceSheet;
                     const latestIS = companyData.latest_data.IncomeStatement;
                     const historicalIS = companyData.historical_data.IncomeStatement;
-                    
-                    // Annahme: Markt- und Bewertungsdaten befinden sich in einem neuen Property 'Valuation'
                     const latestVal = companyData.latest_data.Valuation || {}; 
                     const historicalVal = companyData.historical_data.Valuation || {}; 
 
@@ -235,9 +258,10 @@
                         "Total Revenue": [],
                         "Common Stockholders / Total Revenue": [], 
                         "Revenue Change (%)": [],
-                        // NEUE BEWERTUNGSKENNZAHLEN
+                        // BEWERTUNGSKENNZAHLEN
                         "KGV (Price Earnings Ratio)": [],
-                        "KBV (Price to Book Ratio)": []
+                        "KBV (Price to Book Ratio)": [],
+                        "Dividendenrendite": [] 
                     };
 
                     const historicalYears = Object.keys(historicalBS).sort((a, b) => b - a);
@@ -248,22 +272,26 @@
                         const isCurrent = period === 'Aktuell';
                         const bsData = isCurrent ? latestBS : (historicalBS[period] || {});
                         const isData = isCurrent ? latestIS : (historicalIS[period] || {});
-                        const valData = isCurrent ? latestVal : (historicalVal[period] || {}); // NEU
+                        const valData = isCurrent ? latestVal : (historicalVal[period] || {}); 
 
+                        // Wandelt "N/A" Strings in null um, wenn sie in der JSON sind (wie von fetch_data.py erzeugt)
+                        const cleanValue = (val) => (typeof val === 'string' && (val.includes("N/A") || val.includes("Berechnung"))) ? null : val;
                         
                         periodData[period] = {
-                            assetsRaw: bsData["Current Assets"] ?? null,
-                            liabilitiesRaw: bsData["Current Liabilities"] ?? null,
-                            nonCurrentLiabilitiesRaw: bsData["Total Non Current Liabilities Net Minority Interest"] ?? null,
-                            totalAssetsRaw: bsData["Total Assets"] ?? null, 
-                            equityRaw: bsData["Stockholders Equity"] ?? null,
-                            totalLiabilitiesRaw: bsData["Total Liabilities Net Minority Interest"] ?? null,
-                            netIncomeContRaw: isData["Net Income Continuous Operations"] ?? null,
-                            netIncomeCSRaw: isData["Net Income Common Stockholders"] ?? null,
-                            revenueRaw: isData["Total Revenue"] ?? null,
+                            assetsRaw: cleanValue(bsData["Current Assets"]),
+                            liabilitiesRaw: cleanValue(bsData["Current Liabilities"]),
+                            nonCurrentLiabilitiesRaw: cleanValue(bsData["Total Non Current Liabilities Net Minority Interest"]),
+                            totalAssetsRaw: cleanValue(bsData["Total Assets"]), 
+                            equityRaw: cleanValue(bsData["Stockholders Equity"]),
+                            totalLiabilitiesRaw: cleanValue(bsData["Total Liabilities Net Minority Interest"]),
+                            netIncomeContRaw: cleanValue(isData["Net Income Continuous Operations"]),
+                            netIncomeCSRaw: cleanValue(isData["Net Income Common Stockholders"]),
+                            revenueRaw: cleanValue(isData["Total Revenue"]),
+                            
                             // NEUE BEWERTUNGSDATEN
-                            peRatioRaw: valData["Price Earnings Ratio"] ?? null,
-                            pbRatioRaw: valData["Price to Book Ratio"] ?? null
+                            peRatioRaw: cleanValue(valData["Price Earnings Ratio"]),
+                            pbRatioRaw: cleanValue(valData["Price to Book Ratio"]),
+                            dividendYieldRaw: cleanValue(valData["Dividend Yield"]) 
                         };
                     });
 
@@ -273,11 +301,12 @@
                         const prevPeriodKey = displayedPeriods[i + 1];
                         const previous = prevPeriodKey ? periodData[prevPeriodKey] : {};
                         
-                        // I. Liquidität & II. Kapitalstruktur (Kurzfristig)
+                        // I. Liquidität
                         financialMetrics["Current Assets"].push(formatNumber(current.assetsRaw));
                         financialMetrics["Current Liabilities"].push(formatNumber(current.liabilitiesRaw));
                         financialMetrics["Assets/Liabilities"].push(calculateRatioCell(current.assetsRaw, current.liabilitiesRaw));
                         
+                        // II. Kapitalstruktur (Kurzfristig)
                         const nwcRaw = (typeof current.assetsRaw === 'number' && typeof current.liabilitiesRaw === 'number') ? (current.assetsRaw - current.liabilitiesRaw) : null;
                         financialMetrics["Net Working Capital"].push(formatNumber(nwcRaw)); 
                         
@@ -305,9 +334,11 @@
                             prevPeriodKey ? calculatePercentageChangeCell(current.revenueRaw, previous.revenueRaw) : '<td class="text-end">N/A</td>'
                         );
 
-                        // V. NEUE BEWERTUNGSKENNZAHLEN
-                        financialMetrics["KGV (Price Earnings Ratio)"].push(formatRatio(current.peRatioRaw));
-                        financialMetrics["KBV (Price to Book Ratio)"].push(formatRatio(current.pbRatioRaw));
+                        // V. BEWERTUNGSKENNZAHLEN
+                        // HIER WIRD DIE KENNZAHL AN DIE FUNKTION formatRatio ÜBERGEBEN
+                        financialMetrics["KGV (Price Earnings Ratio)"].push(formatRatio(current.peRatioRaw, "KGV (Price Earnings Ratio)")); 
+                        financialMetrics["KBV (Price to Book Ratio)"].push(formatRatio(current.pbRatioRaw, "KBV (Price to Book Ratio)")); 
+                        financialMetrics["Dividendenrendite"].push(formatDividendYield(current.dividendYieldRaw)); 
                     });
                     
                     // --- HTML für die transponierte Tabelle generieren ---
@@ -365,8 +396,10 @@
                     
                     // V. BEWERTUNGS-SEKTION (NEU am Ende)
                     tableBody += `<tr><td colspan="${displayedPeriods.length + 1}" class="p-0 border-0"></td></tr>`;
-                    tableBody += generateRow("KGV (Price Earnings Ratio)", true); // Hervorgehoben
-                    tableBody += generateRow("KBV (Price to Book Ratio)", true); // Hervorgehoben
+                    tableBody += generateRow("KGV (Price Earnings Ratio)", true); 
+                    tableBody += generateRow("KBV (Price to Book Ratio)", true); 
+                    tableBody += generateRow("Dividendenrendite", true); 
+                    
 
                     // --- Karussell Item Rendering ---
 
