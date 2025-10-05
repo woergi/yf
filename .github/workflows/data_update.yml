@@ -1,0 +1,46 @@
+name: Tägliches Finanz-Update
+
+# Definiert den Auslöser: Täglich um 08:00 UTC und manuell über die GitHub-Oberfläche
+on:
+  schedule:
+    # Jeden Tag um 08:00 Uhr UTC (entspricht 10:00 Uhr MESZ)
+    - cron: '0 8 * * *' 
+  workflow_dispatch: # Ermöglicht manuelle Ausführung
+
+jobs:
+  update-financial-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          # Wir benötigen den vollen Verlauf, um committen zu können
+          fetch-depth: 0 
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x' 
+
+      - name: Abhängigkeiten installieren
+        run: |
+          pip install -r requirements.txt
+          
+      - name: Datenordner erstellen
+        run: |
+          mkdir -p data
+          
+      - name: Python Skript ausführen
+        run: python fetch_data.py
+        
+      - name: Geänderte Dateien committen
+        run: |
+          # Prüft, ob Änderungen an der JSON-Datei vorliegen
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add data/financial_data.json
+          
+          # Führt den Commit nur aus, wenn es Änderungen gibt
+          git commit -m "Automatisches Update der Finanzdaten (AAPL)" || echo "Keine Änderungen zu committen"
+          git push
+
