@@ -1,0 +1,15 @@
+<script>
+fetch('data/financial_data.json')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('ticker').textContent = data.ticker;
+        document.getElementById('assets').textContent = data.current_assets.toLocaleString('de-DE');
+        document.getElementById('update-date').textContent = data.date_fetched;
+    })
+    .catch(error => console.error('Fehler beim Laden der Daten:', error));
+</script>
+
+<h1>Umlaufvermögen für <span id="ticker">...</span></h1>
+<p>Aktuellster Wert: $<span id="assets">Lädt...</span></p>
+<small>Zuletzt aktualisiert am: <span id="update-date">...</span></small>
+
