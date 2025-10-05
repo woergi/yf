@@ -1,15 +1,452 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamisches Finanzdaten-Karussell</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* CSS für die Darstellung */
+        .carousel-item {
+            background-color: #ffffff;
+            color: #343a40;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            filter: invert(20%); 
+        }
+        .data-container {
+            max-width: 900px;
+            width: 100%;
+        }
+	th[scope="row"] {
+		min-width: 250px;
+		max-width: 450px;
+		width: 25%; /* Kann auch eine prozentuale Breite verwenden */
+		white-space: normal; /* Erlaubt Zeilenumbrüche für lange Namen */
+    	}
+        /* Stil für die Kopfzeile der Finanz-Tabelle */
+        .financial-table-header {
+            background-color: #e9ecef;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4 text-primary">Dynamische Aktienübersicht 📊</h1>
+        <p class="text-center text-muted">Daten abgerufen aus Ihrer lokalen JSON-Datei.</p>
+
+        <div id="companyCarousel" class="carousel slide shadow-lg carousel-fade" data-bs-ride="false">
+            
+            <div class="carousel-indicators" id="carouselIndicators">
+                </div>
+
+            <div class="carousel-inner border rounded bg-white" id="carouselInner">
+                <div class="carousel-item active p-5 text-center text-primary" id="loadingIndicator">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Daten werden geladen...</span>
+                    </div>
+                    <p class="mt-2">Daten werden von 'data/financial_data.json' geladen...</p>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#companyCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Zurück</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#companyCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Weiter</span>
+            </button>
+        </div>
+        
+        <p class="text-center mt-4">Zuletzt aktualisiert: <span id="fetchDate" class="fw-bold">...</span></p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
 <script>
-fetch('data/financial_data.json')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('ticker').textContent = data.ticker;
-        document.getElementById('assets').textContent = data.current_assets.toLocaleString('de-DE');
-        document.getElementById('update-date').textContent = data.date_fetched;
-    })
-    .catch(error => console.error('Fehler beim Laden der Daten:', error));
+    // Funktion zum Formatieren von Zahlen (mit Trennzeichen)
+    const formatNumber = (num) => {
+        if (typeof num === 'number') {
+            // Zeigt in Mrd. an, gerundet auf zwei Dezimalstellen
+            return (num / 1000000000).toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+        return num; // Gibt "N/A" oder andere Strings zurück
+    };
+
+    // NEUE FUNKTION: Formatiert Kennzahlen (KGV, KBV) ohne bedingte Formatierung
+    const formatRatio = (num) => {
+        if (typeof num === 'number') {
+            return `<td class="text-end">${num.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>`;
+        }
+        return '<td class="text-end bg-warning-subtle">N/A</td>';
+    };
+
+    // FUNKTION: Berechnet die Ratio und gibt den Wert als HTML-Zelle zurück (für Assets/Liabilities)
+    const calculateRatioCell = (assets, liabilities) => {
+        if (typeof assets !== 'number' || typeof liabilities !== 'number' || liabilities === 0) {
+            return '<td class="text-end bg-warning-subtle">N/A</td>';
+        }
+        
+        const ratio = assets / liabilities;
+        const ratioFormatted = ratio.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        
+        let cellClass = 'text-end';
+        if (ratio < 1.5) {
+            cellClass += ' table-danger fw-bold'; 
+        } else {
+            cellClass += ' table-success';
+        }
+
+        return `<td class="${cellClass}">${ratioFormatted}</td>`;
+    };
+    
+    // FUNKTION: Berechnet die Ratio Net Income Common Stockholders / Total Revenue (OHNE bedingte Formatierung)
+    const calculateCustomRatioCell = (netIncome, revenue) => {
+        if (typeof netIncome !== 'number' || typeof revenue !== 'number' || revenue === 0) {
+            return '<td class="text-end bg-warning-subtle">N/A</td>';
+        }
+
+        const ratio = netIncome / revenue;
+        const ratioFormatted = ratio.toLocaleString('de-DE', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        
+        return `<td class="text-end">${ratioFormatted}</td>`;
+    };
+
+    // FUNKTION: Berechnet die Net Difference und gibt den Wert als HTML-Zelle zurück
+    const calculateDifferenceCell = (differenceRaw) => {
+        if (typeof differenceRaw !== 'number') {
+            return '<td class="text-end bg-warning-subtle">N/A</td>';
+        }
+        
+        let cellClass = 'text-end';
+        
+        const differenceFormatted = formatNumber(differenceRaw);
+        
+        if (differenceRaw < 0) {
+            cellClass += ' table-danger fw-bold'; 
+        } else {
+             cellClass += ' table-success';
+        }
+
+        return `<td class="${cellClass}">${differenceFormatted}</td>`;
+    };
+    
+    // FUNKTION: Berechnet die Eigenkapital- oder Fremdkapitalquote (OHNE bedingte Formatierung)
+    const calculateBalanceSheetRatio = (numerator, totalAssets) => {
+        if (typeof numerator !== 'number' || typeof totalAssets !== 'number' || totalAssets === 0) {
+            return '<td class="text-end bg-warning-subtle">N/A</td>';
+        }
+
+        const ratio = numerator / totalAssets;
+        const ratioFormatted = ratio.toLocaleString('de-DE', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        
+        return `<td class="text-end">${ratioFormatted}</td>`;
+    };
+
+    // FUNKTION: Berechnet die prozentuale Veränderung zum Vorjahr
+    const calculatePercentageChangeCell = (currentValue, previousValue) => {
+        if (typeof currentValue !== 'number' || typeof previousValue !== 'number' || previousValue === 0) {
+            return '<td class="text-end bg-warning-subtle">N/A</td>';
+        }
+
+        const change = ((currentValue - previousValue) / Math.abs(previousValue));
+        const changeFormatted = change.toLocaleString('de-DE', { 
+            style: 'percent', 
+            minimumFractionDigits: 2, 
+            maximumFractionDigits: 2 
+        });
+
+        let cellClass = 'text-end';
+        
+        if (change < 0) {
+            cellClass += ' table-danger fw-bold';
+        } else {
+            cellClass += ' table-success';
+        }
+
+        return `<td class="${cellClass}">${changeFormatted}</td>`;
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const JSON_PATH = 'data/financial_data.json';
+        const indicatorsContainer = document.getElementById('carouselIndicators');
+        const innerContainer = document.getElementById('carouselInner');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const carouselElement = document.getElementById('companyCarousel');
+
+        fetch(JSON_PATH)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Fehler ${response.status}: Datei nicht gefunden oder Netzwerkfehler.`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const companies = data.companies;
+                const tickers = Object.keys(companies);
+
+                if (loadingIndicator) {
+                    innerContainer.removeChild(loadingIndicator);
+                }
+                document.getElementById('fetchDate').textContent = data.metadata.date_fetched;
+
+                tickers.forEach((ticker, index) => {
+                    const companyData = companies[ticker];
+                    
+                    const companyName = companyData.company_name; 
+                    
+                    const latestBS = companyData.latest_data.BalanceSheet;
+                    const historicalBS = companyData.historical_data.BalanceSheet;
+                    const latestIS = companyData.latest_data.IncomeStatement;
+                    const historicalIS = companyData.historical_data.IncomeStatement;
+                    
+                    // Annahme: Markt- und Bewertungsdaten befinden sich in einem neuen Property 'Valuation'
+                    const latestVal = companyData.latest_data.Valuation || {}; 
+                    const historicalVal = companyData.historical_data.Valuation || {}; 
+
+                    const financialMetrics = {
+                        // Liquidität
+                        "Current Assets": [],
+                        "Current Liabilities": [],
+                        "Assets/Liabilities": [],
+                        // Kapitalstruktur (Kurzfristig)
+                        "Net Working Capital": [], 
+                        "Total Non Current Liabilities Net Minority Interest": [],
+                        "Net Difference": [],
+                        // Kapitalstruktur (Langfristig)
+                        "Stockholders Equity": [],
+                        "Total Liabilities Net Minority Interest": [],
+                        "Equity Ratio": [],
+                        "Liabilities Ratio": [],
+                        // Gewinn
+                        "Net Income Continuous Operations": [],
+                        "Change in Net Income": [], 
+                        "Net Income Common Stockholders": [], 
+                        "Total Revenue": [],
+                        "Common Stockholders / Total Revenue": [], 
+                        "Revenue Change (%)": [],
+                        // NEUE BEWERTUNGSKENNZAHLEN
+                        "KGV (Price Earnings Ratio)": [],
+                        "KBV (Price to Book Ratio)": []
+                    };
+
+                    const historicalYears = Object.keys(historicalBS).sort((a, b) => b - a);
+                    const displayedPeriods = ['Aktuell', ...historicalYears.slice(0, 3)];
+
+                    const periodData = {};
+                    displayedPeriods.forEach(period => {
+                        const isCurrent = period === 'Aktuell';
+                        const bsData = isCurrent ? latestBS : (historicalBS[period] || {});
+                        const isData = isCurrent ? latestIS : (historicalIS[period] || {});
+                        const valData = isCurrent ? latestVal : (historicalVal[period] || {}); // NEU
+
+                        
+                        periodData[period] = {
+                            assetsRaw: bsData["Current Assets"] ?? null,
+                            liabilitiesRaw: bsData["Current Liabilities"] ?? null,
+                            nonCurrentLiabilitiesRaw: bsData["Total Non Current Liabilities Net Minority Interest"] ?? null,
+                            totalAssetsRaw: bsData["Total Assets"] ?? null, 
+                            equityRaw: bsData["Stockholders Equity"] ?? null,
+                            totalLiabilitiesRaw: bsData["Total Liabilities Net Minority Interest"] ?? null,
+                            netIncomeContRaw: isData["Net Income Continuous Operations"] ?? null,
+                            netIncomeCSRaw: isData["Net Income Common Stockholders"] ?? null,
+                            revenueRaw: isData["Total Revenue"] ?? null,
+                            // NEUE BEWERTUNGSDATEN
+                            peRatioRaw: valData["Price Earnings Ratio"] ?? null,
+                            pbRatioRaw: valData["Price to Book Ratio"] ?? null
+                        };
+                    });
+
+                    displayedPeriods.forEach((period, i) => {
+                        const current = periodData[period];
+                        
+                        const prevPeriodKey = displayedPeriods[i + 1];
+                        const previous = prevPeriodKey ? periodData[prevPeriodKey] : {};
+                        
+                        // I. Liquidität & II. Kapitalstruktur (Kurzfristig)
+                        financialMetrics["Current Assets"].push(formatNumber(current.assetsRaw));
+                        financialMetrics["Current Liabilities"].push(formatNumber(current.liabilitiesRaw));
+                        financialMetrics["Assets/Liabilities"].push(calculateRatioCell(current.assetsRaw, current.liabilitiesRaw));
+                        
+                        const nwcRaw = (typeof current.assetsRaw === 'number' && typeof current.liabilitiesRaw === 'number') ? (current.assetsRaw - current.liabilitiesRaw) : null;
+                        financialMetrics["Net Working Capital"].push(formatNumber(nwcRaw)); 
+                        
+                        financialMetrics["Total Non Current Liabilities Net Minority Interest"].push(formatNumber(current.nonCurrentLiabilitiesRaw));
+                        const netDiffRaw = (typeof nwcRaw === 'number' && typeof current.nonCurrentLiabilitiesRaw === 'number') ? (nwcRaw - current.nonCurrentLiabilitiesRaw) : null;
+                        financialMetrics["Net Difference"].push(calculateDifferenceCell(netDiffRaw));
+                        
+                        // III. Kapitalstruktur (Langfristig)
+                        financialMetrics["Stockholders Equity"].push(formatNumber(current.equityRaw));
+                        financialMetrics["Total Liabilities Net Minority Interest"].push(formatNumber(current.totalLiabilitiesRaw));
+                        financialMetrics["Equity Ratio"].push(calculateBalanceSheetRatio(current.equityRaw, current.totalAssetsRaw));
+                        financialMetrics["Liabilities Ratio"].push(calculateBalanceSheetRatio(current.totalLiabilitiesRaw, current.totalAssetsRaw));
+                        
+                        // IV. Gewinnentwicklung
+                        financialMetrics["Net Income Continuous Operations"].push(formatNumber(current.netIncomeContRaw));
+                        financialMetrics["Change in Net Income"].push(
+                            prevPeriodKey ? calculatePercentageChangeCell(current.netIncomeContRaw, previous.netIncomeContRaw) : '<td class="text-end">N/A</td>'
+                        );
+                        financialMetrics["Net Income Common Stockholders"].push(formatNumber(current.netIncomeCSRaw));
+                        financialMetrics["Total Revenue"].push(formatNumber(current.revenueRaw));
+                        financialMetrics["Common Stockholders / Total Revenue"].push(
+                            calculateCustomRatioCell(current.netIncomeCSRaw, current.revenueRaw)
+                        );
+                        financialMetrics["Revenue Change (%)"].push(
+                            prevPeriodKey ? calculatePercentageChangeCell(current.revenueRaw, previous.revenueRaw) : '<td class="text-end">N/A</td>'
+                        );
+
+                        // V. NEUE BEWERTUNGSKENNZAHLEN
+                        financialMetrics["KGV (Price Earnings Ratio)"].push(formatRatio(current.peRatioRaw));
+                        financialMetrics["KBV (Price to Book Ratio)"].push(formatRatio(current.pbRatioRaw));
+                    });
+                    
+                    // --- HTML für die transponierte Tabelle generieren ---
+                    
+                    let tableHead = '<tr><th>Kennzahl</th>';
+                    displayedPeriods.forEach(period => {
+                        const classes = period === 'Aktuell' ? 'table-primary' : '';
+                        tableHead += `<th class="text-end ${classes}">${period}</th>`;
+                    });
+                    tableHead += '</tr>';
+
+                    let tableBody = '';
+                    
+                    const generateRow = (metric, isHeaderRow = false) => {
+                        let rowHtml = `<tr><th scope="row" ${isHeaderRow ? 'class="table-secondary fw-bold"' : ''}>${metric}</th>`;
+                        financialMetrics[metric].forEach(value => {
+                            if (typeof value === 'string' && value.startsWith('<td')) {
+                                rowHtml += value;
+                            } else {
+                                const displayValue = (value === null || value === undefined) ? 'N/A' : value;
+                                rowHtml += `<td class="text-end">${displayValue}</td>`;
+                            }
+                        });
+                        rowHtml += '</tr>';
+                        return rowHtml;
+                    };
+
+
+                    // I. Liquiditäts-Sektion
+                    tableBody += generateRow("Current Assets");
+                    tableBody += generateRow("Current Liabilities");
+                    tableBody += generateRow("Assets/Liabilities", true); 
+                    
+                    // II. Kapitalstruktur (Kurzfristig)
+                    tableBody += `<tr><td colspan="${displayedPeriods.length + 1}" class="p-0 border-0"></td></tr>`;
+                    tableBody += generateRow("Net Working Capital");
+                    tableBody += generateRow("Total Non Current Liabilities Net Minority Interest");
+                    tableBody += generateRow("Net Difference", true); 
+                    
+                    // III. Kapitalstruktur (Langfristig)
+                    tableBody += `<tr><td colspan="${displayedPeriods.length + 1}" class="p-0 border-0"></td></tr>`;
+                    tableBody += generateRow("Stockholders Equity");
+                    tableBody += generateRow("Total Liabilities Net Minority Interest");
+                    tableBody += generateRow("Equity Ratio", true);
+                    tableBody += generateRow("Liabilities Ratio", true);
+
+                    // IV. Gewinn-Sektion
+                    tableBody += `<tr><td colspan="${displayedPeriods.length + 1}" class="p-0 border-0"></td></tr>`;
+                    tableBody += generateRow("Net Income Continuous Operations");
+                    tableBody += generateRow("Change in Net Income", true); 
+                    tableBody += generateRow("Net Income Common Stockholders");
+                    tableBody += generateRow("Total Revenue"); 
+                    tableBody += generateRow("Common Stockholders / Total Revenue", true);
+                    tableBody += generateRow("Revenue Change (%)", true); 
+                    
+                    // V. BEWERTUNGS-SEKTION (NEU am Ende)
+                    tableBody += `<tr><td colspan="${displayedPeriods.length + 1}" class="p-0 border-0"></td></tr>`;
+                    tableBody += generateRow("KGV (Price Earnings Ratio)", true); // Hervorgehoben
+                    tableBody += generateRow("KBV (Price to Book Ratio)", true); // Hervorgehoben
+
+                    // --- Karussell Item Rendering ---
+
+                    const indicator = document.createElement('button');
+                    indicator.setAttribute('type', 'button');
+                    indicator.setAttribute('data-bs-target', '#companyCarousel');
+                    indicator.setAttribute('data-bs-slide-to', index);
+                    indicator.setAttribute('aria-label', `Slide ${index + 1}: ${ticker}`);
+                    if (index === 0) {
+                        indicator.classList.add('active');
+                        indicator.setAttribute('aria-current', 'true');
+                    }
+                    indicatorsContainer.appendChild(indicator);
+
+                    const item = document.createElement('div');
+                    item.classList.add('carousel-item', 'd-flex', 'align-items-center', 'justify-content-center');
+                    if (index === 0) {
+                        item.classList.add('active'); 
+                    }
+                    
+                    const historicalYearsCount = companyData.historical_data.BalanceSheet ? Object.keys(companyData.historical_data.BalanceSheet).length : 0;
+
+                    const tableHtml = `
+                        <div class="data-container p-4">
+                            <div class="card shadow">
+                                <div class="card-header bg-primary text-white text-center">
+                                    <h4>${companyName}</h4>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-sm table-borderless mb-3">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Ticker-Symbol</th>
+                                                <td><span class="badge bg-success fs-6">${ticker}</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <h6 class="mb-2 text-primary">Schlüsselkennzahlen (Werte in Mrd.)</h6>
+                                    <table class="table table-bordered table-striped mb-0">
+                                        <thead class="financial-table-header">
+                                            ${tableHead}
+                                        </thead>
+                                        <tbody>
+                                            ${tableBody}
+                                        </tbody>
+                                    </table>
+                                    <div class="mt-3 text-center">
+                                        <small class="text-muted">Historische Daten verfügbar: ${historicalYearsCount} Jahre</small>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    item.innerHTML = tableHtml;
+                    innerContainer.appendChild(item);
+                });
+                
+                // WICHTIG: Karussell neu initialisieren
+                if (carouselElement) {
+                    const carouselInstance = bootstrap.Carousel.getInstance(carouselElement);
+                    if (carouselInstance) {
+                        carouselInstance.dispose();
+                    }
+                    new bootstrap.Carousel(carouselElement, {
+                        interval: false 
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('FEHLER:', error);
+                if (loadingIndicator) {
+                    loadingIndicator.innerHTML = `<p class="text-danger">Fehler beim Laden der Daten: ${error.message}.</p>`;
+                    loadingIndicator.classList.remove('spinner-border');
+                }
+            });
+    });
 </script>
 
-<h1>Umlaufvermögen für <span id="ticker">...</span></h1>
-<p>Aktuellster Wert: $<span id="assets">Lädt...</span></p>
-<small>Zuletzt aktualisiert am: <span id="update-date">...</span></small>
+</body>
+</html>
 

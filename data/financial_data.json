@@ -1,6 +1,658 @@
 {
-    "ticker": "AAPL",
-    "date_fetched": "2025-10-05 10:10:37",
-    "current_assets": 152987000000,
-    "source": "Yahoo Finance via yfinance"
+    "metadata": {
+        "date_fetched": "2025-10-05 12:44:05",
+        "tickers_requested": 4,
+        "tickers_succeeded": 4,
+        "tickers_failed": []
+    },
+    "companies": {
+        "AAPL": {
+            "company_name": "Apple Inc.",
+            "latest_data": {
+                "BalanceSheet": {
+                    "Cash, Cash Equivalents And Short Term Investments": "N/A - Feld nicht gefunden",
+                    "Receivables": 66243000000,
+                    "Current Assets": 152987000000,
+                    "Total Non Current Assets": 211993000000,
+                    "Total Assets": 364980000000,
+                    "Payables": 95561000000,
+                    "Current Debt": 20879000000,
+                    "Current Liabilities": 176392000000,
+                    "Total Non Current Liabilities Net Minority Interest": 131638000000,
+                    "Total Liabilities Net Minority Interest": 308030000000,
+                    "Stockholders Equity": 56950000000
+                },
+                "IncomeStatement": {
+                    "Total Revenue": 391035000000,
+                    "Gross Profit": 180683000000,
+                    "Operating Income": 123216000000,
+                    "Pretax Income": 123485000000,
+                    "Net Income Continuous Operations": 93736000000,
+                    "Net Income Common Stockholders": 93736000000,
+                    "Normalized Income": 93736000000,
+                    "EBIT": 123216000000,
+                    "EBITDA": 134661000000
+                },
+                "CashFlowStatement": {
+                    "Cash Dividends Paid": -15234000000
+                }
+            },
+            "historical_data": {
+                "BalanceSheet": {
+                    "2024": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 66243000000,
+                        "Current Assets": 152987000000,
+                        "Total Non Current Assets": 211993000000,
+                        "Total Assets": 364980000000,
+                        "Payables": 95561000000,
+                        "Current Debt": 20879000000,
+                        "Current Liabilities": 176392000000,
+                        "Total Non Current Liabilities Net Minority Interest": 131638000000,
+                        "Total Liabilities Net Minority Interest": 308030000000,
+                        "Stockholders Equity": 56950000000
+                    },
+                    "2023": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 60985000000,
+                        "Current Assets": 143566000000,
+                        "Total Non Current Assets": 209017000000,
+                        "Total Assets": 352583000000,
+                        "Payables": 71430000000,
+                        "Current Debt": 15807000000,
+                        "Current Liabilities": 145308000000,
+                        "Total Non Current Liabilities Net Minority Interest": 145129000000,
+                        "Total Liabilities Net Minority Interest": 290437000000,
+                        "Stockholders Equity": 62146000000
+                    },
+                    "2022": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 60932000000,
+                        "Current Assets": 135405000000,
+                        "Total Non Current Assets": 217350000000,
+                        "Total Assets": 352755000000,
+                        "Payables": 70667000000,
+                        "Current Debt": 21110000000,
+                        "Current Liabilities": 153982000000,
+                        "Total Non Current Liabilities Net Minority Interest": 148101000000,
+                        "Total Liabilities Net Minority Interest": 302083000000,
+                        "Stockholders Equity": 50672000000
+                    },
+                    "2021": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 51506000000,
+                        "Current Assets": 134836000000,
+                        "Total Non Current Assets": 216166000000,
+                        "Total Assets": 351002000000,
+                        "Payables": 54763000000,
+                        "Current Debt": 15613000000,
+                        "Current Liabilities": 125481000000,
+                        "Total Non Current Liabilities Net Minority Interest": 162431000000,
+                        "Total Liabilities Net Minority Interest": 287912000000,
+                        "Stockholders Equity": 63090000000
+                    }
+                },
+                "IncomeStatement": {
+                    "2024": {
+                        "Total Revenue": 391035000000,
+                        "Gross Profit": 180683000000,
+                        "Operating Income": 123216000000,
+                        "Pretax Income": 123485000000,
+                        "Net Income Continuous Operations": 93736000000,
+                        "Net Income Common Stockholders": 93736000000,
+                        "Normalized Income": 93736000000,
+                        "EBIT": 123216000000,
+                        "EBITDA": 134661000000
+                    },
+                    "2023": {
+                        "Total Revenue": 383285000000,
+                        "Gross Profit": 169148000000,
+                        "Operating Income": 114301000000,
+                        "Pretax Income": 113736000000,
+                        "Net Income Continuous Operations": 96995000000,
+                        "Net Income Common Stockholders": 96995000000,
+                        "Normalized Income": 96995000000,
+                        "EBIT": 114301000000,
+                        "EBITDA": 125820000000
+                    },
+                    "2022": {
+                        "Total Revenue": 394328000000,
+                        "Gross Profit": 170782000000,
+                        "Operating Income": 119437000000,
+                        "Pretax Income": 119103000000,
+                        "Net Income Continuous Operations": 99803000000,
+                        "Net Income Common Stockholders": 99803000000,
+                        "Normalized Income": 99803000000,
+                        "EBIT": 119437000000,
+                        "EBITDA": 130541000000
+                    },
+                    "2021": {
+                        "Total Revenue": 365817000000,
+                        "Gross Profit": 152836000000,
+                        "Operating Income": 108949000000,
+                        "Pretax Income": 109207000000,
+                        "Net Income Continuous Operations": 94680000000,
+                        "Net Income Common Stockholders": 94680000000,
+                        "Normalized Income": 94680000000,
+                        "EBIT": 111852000000,
+                        "EBITDA": 123136000000
+                    }
+                },
+                "CashFlowStatement": {
+                    "2024": {
+                        "Cash Dividends Paid": -15234000000
+                    },
+                    "2023": {
+                        "Cash Dividends Paid": -15025000000
+                    },
+                    "2022": {
+                        "Cash Dividends Paid": -14841000000
+                    },
+                    "2021": {
+                        "Cash Dividends Paid": -14467000000
+                    }
+                }
+            }
+        },
+        "MSFT": {
+            "company_name": "Microsoft Corporation",
+            "latest_data": {
+                "BalanceSheet": {
+                    "Cash, Cash Equivalents And Short Term Investments": "N/A - Feld nicht gefunden",
+                    "Receivables": 69905000000,
+                    "Current Assets": 191131000000,
+                    "Total Non Current Assets": 427872000000,
+                    "Total Assets": 619003000000,
+                    "Payables": 34935000000,
+                    "Current Debt": 2999000000,
+                    "Current Liabilities": 141218000000,
+                    "Total Non Current Liabilities Net Minority Interest": 134306000000,
+                    "Total Liabilities Net Minority Interest": 275524000000,
+                    "Stockholders Equity": 343479000000
+                },
+                "IncomeStatement": {
+                    "Total Revenue": 281724000000,
+                    "Gross Profit": 193893000000,
+                    "Operating Income": 128528000000,
+                    "Pretax Income": 123627000000,
+                    "Net Income Continuous Operations": 101832000000,
+                    "Net Income Common Stockholders": 101832000000,
+                    "Normalized Income": 102192912000,
+                    "EBIT": 126012000000,
+                    "EBITDA": 160165000000
+                },
+                "CashFlowStatement": {
+                    "Cash Dividends Paid": -24082000000
+                }
+            },
+            "historical_data": {
+                "BalanceSheet": {
+                    "2025": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 69905000000,
+                        "Current Assets": 191131000000,
+                        "Total Non Current Assets": 427872000000,
+                        "Total Assets": 619003000000,
+                        "Payables": 34935000000,
+                        "Current Debt": 2999000000,
+                        "Current Liabilities": 141218000000,
+                        "Total Non Current Liabilities Net Minority Interest": 134306000000,
+                        "Total Liabilities Net Minority Interest": 275524000000,
+                        "Stockholders Equity": 343479000000
+                    },
+                    "2024": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 56924000000,
+                        "Current Assets": 159734000000,
+                        "Total Non Current Assets": 352429000000,
+                        "Total Assets": 512163000000,
+                        "Payables": 27013000000,
+                        "Current Debt": 8942000000,
+                        "Current Liabilities": 125286000000,
+                        "Total Non Current Liabilities Net Minority Interest": 118400000000,
+                        "Total Liabilities Net Minority Interest": 243686000000,
+                        "Stockholders Equity": 268477000000
+                    },
+                    "2023": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 48688000000,
+                        "Current Assets": 184257000000,
+                        "Total Non Current Assets": 227719000000,
+                        "Total Assets": 411976000000,
+                        "Payables": 22247000000,
+                        "Current Debt": 5247000000,
+                        "Current Liabilities": 104149000000,
+                        "Total Non Current Liabilities Net Minority Interest": 101604000000,
+                        "Total Liabilities Net Minority Interest": 205753000000,
+                        "Stockholders Equity": 206223000000
+                    },
+                    "2022": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 44261000000,
+                        "Current Assets": 169684000000,
+                        "Total Non Current Assets": 195156000000,
+                        "Total Assets": 364840000000,
+                        "Payables": 23067000000,
+                        "Current Debt": 2749000000,
+                        "Current Liabilities": 95082000000,
+                        "Total Non Current Liabilities Net Minority Interest": 103216000000,
+                        "Total Liabilities Net Minority Interest": 198298000000,
+                        "Stockholders Equity": 166542000000
+                    },
+                    "2021": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": "N/A",
+                        "Current Assets": "N/A",
+                        "Total Non Current Assets": "N/A",
+                        "Total Assets": "N/A",
+                        "Payables": "N/A",
+                        "Current Debt": "N/A",
+                        "Current Liabilities": "N/A",
+                        "Total Non Current Liabilities Net Minority Interest": "N/A",
+                        "Total Liabilities Net Minority Interest": "N/A",
+                        "Stockholders Equity": "N/A"
+                    }
+                },
+                "IncomeStatement": {
+                    "2025": {
+                        "Total Revenue": 281724000000,
+                        "Gross Profit": 193893000000,
+                        "Operating Income": 128528000000,
+                        "Pretax Income": 123627000000,
+                        "Net Income Continuous Operations": 101832000000,
+                        "Net Income Common Stockholders": 101832000000,
+                        "Normalized Income": 102192912000,
+                        "EBIT": 126012000000,
+                        "EBITDA": 160165000000
+                    },
+                    "2024": {
+                        "Total Revenue": 245122000000,
+                        "Gross Profit": 171008000000,
+                        "Operating Income": 109433000000,
+                        "Pretax Income": 107787000000,
+                        "Net Income Continuous Operations": 88136000000,
+                        "Net Income Common Stockholders": 88136000000,
+                        "Normalized Income": 88585082000,
+                        "EBIT": 110722000000,
+                        "EBITDA": 133009000000
+                    },
+                    "2023": {
+                        "Total Revenue": 211915000000,
+                        "Gross Profit": 146052000000,
+                        "Operating Income": 88523000000,
+                        "Pretax Income": 89311000000,
+                        "Net Income Continuous Operations": 72361000000,
+                        "Net Income Common Stockholders": 72361000000,
+                        "Normalized Income": 72373150000,
+                        "EBIT": 91279000000,
+                        "EBITDA": 105140000000
+                    },
+                    "2022": {
+                        "Total Revenue": 198270000000,
+                        "Gross Profit": 135620000000,
+                        "Operating Income": 83383000000,
+                        "Pretax Income": 83716000000,
+                        "Net Income Continuous Operations": 72738000000,
+                        "Net Income Common Stockholders": 72738000000,
+                        "Normalized Income": 72447754000,
+                        "EBIT": 85779000000,
+                        "EBITDA": 100239000000
+                    }
+                },
+                "CashFlowStatement": {
+                    "2025": {
+                        "Cash Dividends Paid": -24082000000
+                    },
+                    "2024": {
+                        "Cash Dividends Paid": -21771000000
+                    },
+                    "2023": {
+                        "Cash Dividends Paid": -19800000000
+                    },
+                    "2022": {
+                        "Cash Dividends Paid": -18135000000
+                    },
+                    "2021": {
+                        "Cash Dividends Paid": "N/A"
+                    }
+                }
+            }
+        },
+        "GOOGL": {
+            "company_name": "Alphabet Inc.",
+            "latest_data": {
+                "BalanceSheet": {
+                    "Cash, Cash Equivalents And Short Term Investments": "N/A - Feld nicht gefunden",
+                    "Receivables": 52340000000,
+                    "Current Assets": 163711000000,
+                    "Total Non Current Assets": 286545000000,
+                    "Total Assets": 450256000000,
+                    "Payables": 10892000000,
+                    "Current Debt": "N/A - Feld nicht gefunden",
+                    "Current Liabilities": 89122000000,
+                    "Total Non Current Liabilities Net Minority Interest": 36050000000,
+                    "Total Liabilities Net Minority Interest": 125172000000,
+                    "Stockholders Equity": 325084000000
+                },
+                "IncomeStatement": {
+                    "Total Revenue": 350018000000,
+                    "Gross Profit": 203712000000,
+                    "Operating Income": 112390000000,
+                    "Pretax Income": 119815000000,
+                    "Net Income Continuous Operations": 100118000000,
+                    "Net Income Common Stockholders": 100118000000,
+                    "Normalized Income": 98384136000,
+                    "EBIT": 120083000000,
+                    "EBITDA": 135394000000
+                },
+                "CashFlowStatement": {
+                    "Cash Dividends Paid": -7363000000
+                }
+            },
+            "historical_data": {
+                "BalanceSheet": {
+                    "2024": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 52340000000,
+                        "Current Assets": 163711000000,
+                        "Total Non Current Assets": 286545000000,
+                        "Total Assets": 450256000000,
+                        "Payables": 10892000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 89122000000,
+                        "Total Non Current Liabilities Net Minority Interest": 36050000000,
+                        "Total Liabilities Net Minority Interest": 125172000000,
+                        "Stockholders Equity": 325084000000
+                    },
+                    "2023": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 47964000000,
+                        "Current Assets": 171530000000,
+                        "Total Non Current Assets": 230862000000,
+                        "Total Assets": 402392000000,
+                        "Payables": 10241000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 81814000000,
+                        "Total Non Current Liabilities Net Minority Interest": 37199000000,
+                        "Total Liabilities Net Minority Interest": 119013000000,
+                        "Stockholders Equity": 283379000000
+                    },
+                    "2022": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 40258000000,
+                        "Current Assets": 164795000000,
+                        "Total Non Current Assets": 200469000000,
+                        "Total Assets": 365264000000,
+                        "Payables": 6760000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 69300000000,
+                        "Total Non Current Liabilities Net Minority Interest": 39820000000,
+                        "Total Liabilities Net Minority Interest": 109120000000,
+                        "Stockholders Equity": 256144000000
+                    },
+                    "2021": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 39304000000,
+                        "Current Assets": 188143000000,
+                        "Total Non Current Assets": 171125000000,
+                        "Total Assets": 359268000000,
+                        "Payables": 6037000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 64254000000,
+                        "Total Non Current Liabilities Net Minority Interest": 43379000000,
+                        "Total Liabilities Net Minority Interest": 107633000000,
+                        "Stockholders Equity": 251635000000
+                    },
+                    "2020": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": "N/A",
+                        "Current Assets": "N/A",
+                        "Total Non Current Assets": "N/A",
+                        "Total Assets": "N/A",
+                        "Payables": "N/A",
+                        "Current Debt": "N/A",
+                        "Current Liabilities": "N/A",
+                        "Total Non Current Liabilities Net Minority Interest": "N/A",
+                        "Total Liabilities Net Minority Interest": "N/A",
+                        "Stockholders Equity": "N/A"
+                    }
+                },
+                "IncomeStatement": {
+                    "2024": {
+                        "Total Revenue": 350018000000,
+                        "Gross Profit": 203712000000,
+                        "Operating Income": 112390000000,
+                        "Pretax Income": 119815000000,
+                        "Net Income Continuous Operations": 100118000000,
+                        "Net Income Common Stockholders": 100118000000,
+                        "Normalized Income": 98384136000,
+                        "EBIT": 120083000000,
+                        "EBITDA": 135394000000
+                    },
+                    "2023": {
+                        "Total Revenue": 307394000000,
+                        "Gross Profit": 174062000000,
+                        "Operating Income": 84293000000,
+                        "Pretax Income": 85717000000,
+                        "Net Income Continuous Operations": 73795000000,
+                        "Net Income Common Stockholders": 73795000000,
+                        "Normalized Income": 76110229000,
+                        "EBIT": 86025000000,
+                        "EBITDA": 97971000000
+                    },
+                    "2022": {
+                        "Total Revenue": 282836000000,
+                        "Gross Profit": 156633000000,
+                        "Operating Income": 74842000000,
+                        "Pretax Income": 71328000000,
+                        "Net Income Continuous Operations": 59972000000,
+                        "Net Income Common Stockholders": 59972000000,
+                        "Normalized Income": 65446910000,
+                        "EBIT": 71685000000,
+                        "EBITDA": 85160000000
+                    },
+                    "2021": {
+                        "Total Revenue": 257637000000,
+                        "Gross Profit": 146698000000,
+                        "Operating Income": 78714000000,
+                        "Pretax Income": 90734000000,
+                        "Net Income Continuous Operations": 76033000000,
+                        "Net Income Common Stockholders": 76033000000,
+                        "Normalized Income": 65671968000,
+                        "EBIT": 91080000000,
+                        "EBITDA": 103521000000
+                    }
+                },
+                "CashFlowStatement": {
+                    "2024": {
+                        "Cash Dividends Paid": -7363000000
+                    },
+                    "2023": {
+                        "Cash Dividends Paid": 0
+                    },
+                    "2022": {
+                        "Cash Dividends Paid": 0
+                    },
+                    "2021": {
+                        "Cash Dividends Paid": "N/A"
+                    },
+                    "2020": {
+                        "Cash Dividends Paid": "N/A"
+                    }
+                }
+            }
+        },
+        "AMZN": {
+            "company_name": "Amazon.com, Inc.",
+            "latest_data": {
+                "BalanceSheet": {
+                    "Cash, Cash Equivalents And Short Term Investments": "N/A - Feld nicht gefunden",
+                    "Receivables": 55451000000,
+                    "Current Assets": 190867000000,
+                    "Total Non Current Assets": 434027000000,
+                    "Total Assets": 624894000000,
+                    "Payables": 94363000000,
+                    "Current Debt": "N/A - Feld nicht gefunden",
+                    "Current Liabilities": 179431000000,
+                    "Total Non Current Liabilities Net Minority Interest": 159493000000,
+                    "Total Liabilities Net Minority Interest": 338924000000,
+                    "Stockholders Equity": 285970000000
+                },
+                "IncomeStatement": {
+                    "Total Revenue": 637959000000,
+                    "Gross Profit": 311671000000,
+                    "Operating Income": 68593000000,
+                    "Pretax Income": 68614000000,
+                    "Net Income Continuous Operations": 59248000000,
+                    "Net Income Common Stockholders": 59248000000,
+                    "Normalized Income": 60830028755,
+                    "EBIT": 71020000000,
+                    "EBITDA": 123815000000
+                },
+                "CashFlowStatement": {
+                    "Cash Dividends Paid": "N/A - Feld nicht gefunden"
+                }
+            },
+            "historical_data": {
+                "BalanceSheet": {
+                    "2024": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 55451000000,
+                        "Current Assets": 190867000000,
+                        "Total Non Current Assets": 434027000000,
+                        "Total Assets": 624894000000,
+                        "Payables": 94363000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 179431000000,
+                        "Total Non Current Liabilities Net Minority Interest": 159493000000,
+                        "Total Liabilities Net Minority Interest": 338924000000,
+                        "Stockholders Equity": 285970000000
+                    },
+                    "2023": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 52253000000,
+                        "Current Assets": 172351000000,
+                        "Total Non Current Assets": 355503000000,
+                        "Total Assets": 527854000000,
+                        "Payables": 84981000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 164917000000,
+                        "Total Non Current Liabilities Net Minority Interest": 161062000000,
+                        "Total Liabilities Net Minority Interest": 325979000000,
+                        "Stockholders Equity": 201875000000
+                    },
+                    "2022": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 42360000000,
+                        "Current Assets": 146791000000,
+                        "Total Non Current Assets": 315884000000,
+                        "Total Assets": 462675000000,
+                        "Payables": 79600000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 155393000000,
+                        "Total Non Current Liabilities Net Minority Interest": 161239000000,
+                        "Total Liabilities Net Minority Interest": 316632000000,
+                        "Stockholders Equity": 146043000000
+                    },
+                    "2021": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 32891000000,
+                        "Current Assets": 161580000000,
+                        "Total Non Current Assets": 258969000000,
+                        "Total Assets": 420549000000,
+                        "Payables": 78664000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 142266000000,
+                        "Total Non Current Liabilities Net Minority Interest": 140038000000,
+                        "Total Liabilities Net Minority Interest": 282304000000,
+                        "Stockholders Equity": 138245000000
+                    },
+                    "2020": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": "N/A",
+                        "Current Assets": "N/A",
+                        "Total Non Current Assets": "N/A",
+                        "Total Assets": "N/A",
+                        "Payables": "N/A",
+                        "Current Debt": "N/A",
+                        "Current Liabilities": "N/A",
+                        "Total Non Current Liabilities Net Minority Interest": "N/A",
+                        "Total Liabilities Net Minority Interest": "N/A",
+                        "Stockholders Equity": "N/A"
+                    }
+                },
+                "IncomeStatement": {
+                    "2024": {
+                        "Total Revenue": 637959000000,
+                        "Gross Profit": 311671000000,
+                        "Operating Income": 68593000000,
+                        "Pretax Income": 68614000000,
+                        "Net Income Continuous Operations": 59248000000,
+                        "Net Income Common Stockholders": 59248000000,
+                        "Normalized Income": 60830028755,
+                        "EBIT": 71020000000,
+                        "EBITDA": 123815000000
+                    },
+                    "2023": {
+                        "Total Revenue": 574785000000,
+                        "Gross Profit": 270046000000,
+                        "Operating Income": 36852000000,
+                        "Pretax Income": 37557000000,
+                        "Net Income Continuous Operations": 30425000000,
+                        "Net Income Common Stockholders": 30425000000,
+                        "Normalized Income": 29521380035,
+                        "EBIT": 40739000000,
+                        "EBITDA": 89402000000
+                    },
+                    "2022": {
+                        "Total Revenue": 513983000000,
+                        "Gross Profit": 225152000000,
+                        "Operating Income": 12248000000,
+                        "Pretax Income": -5936000000,
+                        "Net Income Continuous Operations": -2722000000,
+                        "Net Income Common Stockholders": -2722000000,
+                        "Normalized Income": 10128140000,
+                        "EBIT": -3569000000,
+                        "EBITDA": 38352000000
+                    },
+                    "2021": {
+                        "Total Revenue": 469822000000,
+                        "Gross Profit": 197478000000,
+                        "Operating Income": 24879000000,
+                        "Pretax Income": 38151000000,
+                        "Net Income Continuous Operations": 33364000000,
+                        "Net Income Common Stockholders": 33364000000,
+                        "Normalized Income": 20551997169,
+                        "EBIT": 39960000000,
+                        "EBITDA": 74393000000
+                    },
+                    "2020": {
+                        "Total Revenue": "N/A",
+                        "Gross Profit": "N/A",
+                        "Operating Income": "N/A",
+                        "Pretax Income": "N/A",
+                        "Net Income Continuous Operations": "N/A",
+                        "Net Income Common Stockholders": "N/A",
+                        "Normalized Income": "N/A",
+                        "EBIT": "N/A",
+                        "EBITDA": "N/A"
+                    }
+                },
+                "CashFlowStatement": {
+                    "2024": {
+                        "Cash Dividends Paid": "N/A"
+                    },
+                    "2023": {
+                        "Cash Dividends Paid": "N/A"
+                    },
+                    "2022": {
+                        "Cash Dividends Paid": "N/A"
+                    },
+                    "2021": {
+                        "Cash Dividends Paid": "N/A"
+                    }
+                }
+            }
+        }
+    }
 }
