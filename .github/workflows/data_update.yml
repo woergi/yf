@@ -7,6 +7,9 @@ on:
     - cron: '0 8 * * *' 
   workflow_dispatch: # Ermöglicht manuelle Ausführung
 
+permissions:
+  contents: write # Dies gibt dem Bot die Berechtigung, Dateien zu ändern (Commits/Push)
+
 jobs:
   update-financial-data:
     runs-on: ubuntu-latest
