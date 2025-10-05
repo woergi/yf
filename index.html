@@ -110,7 +110,7 @@
     // FUNKTION: Formatiert die Dividendenrendite als Prozentsatz
     const formatDividendYield = (num) => {
         if (typeof num === 'number') {
-            const ratioFormatted = num.toLocaleString('de-DE', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            const ratioFormatted = (num/100).toLocaleString('de-DE', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 });
             return `<td class="text-end">${ratioFormatted}</td>`;
         }
         return '<td class="text-end bg-warning-subtle">N/A</td>';
