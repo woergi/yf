@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2025-10-29 08:17:43",
+        "date_fetched": "2025-10-30 08:16:54",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -37,8 +37,8 @@
                     "Cash Dividends Paid": -15234000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 40.819424,
-                    "Price to Book Ratio": 60.70864,
+                    "Price Earnings Ratio": 40.987843,
+                    "Price to Book Ratio": 60.866623,
                     "Dividend Yield": 0.39
                 }
             },
@@ -208,8 +208,8 @@
                     "Cash Dividends Paid": -24082000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 39.683018,
-                    "Price to Book Ratio": 11.732101,
+                    "Price Earnings Ratio": 39.673992,
+                    "Price to Book Ratio": 11.720847,
                     "Dividend Yield": 0.67
                 }
             },
@@ -395,8 +395,8 @@
                     "Cash Dividends Paid": -7363000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 28.484556,
-                    "Price to Book Ratio": 8.920722,
+                    "Price Earnings Ratio": 29.24068,
+                    "Price to Book Ratio": 9.157523,
                     "Dividend Yield": 0.31
                 }
             },
@@ -582,8 +582,8 @@
                     "Cash Dividends Paid": "N/A - Feld nicht gefunden"
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 34.946648,
-                    "Price to Book Ratio": 7.3217077,
+                    "Price Earnings Ratio": 35.10671,
+                    "Price to Book Ratio": 7.3552423,
                     "Dividend Yield": "N/A"
                 }
             },
