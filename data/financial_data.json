@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2025-11-01 08:14:38",
+        "date_fetched": "2025-11-02 08:14:14",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -583,7 +583,7 @@
                 },
                 "Valuation": {
                     "Price Earnings Ratio": 34.49435,
-                    "Price to Book Ratio": 6.998911,
+                    "Price to Book Ratio": 7.061034,
                     "Dividend Yield": "N/A"
                 }
             },
