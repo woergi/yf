@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2025-11-17 08:19:36",
+        "date_fetched": "2025-11-18 08:18:01",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -37,9 +37,9 @@
                     "Cash Dividends Paid": -15421000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 36.516087,
-                    "Price to Book Ratio": 54.580242,
-                    "Dividend Yield": 0.38
+                    "Price Earnings Ratio": 35.852547,
+                    "Price to Book Ratio": 53.588455,
+                    "Dividend Yield": 0.39
                 }
             },
             "historical_data": {
@@ -239,9 +239,9 @@
                     "Cash Dividends Paid": -24082000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 36.234375,
-                    "Price to Book Ratio": 10.445946,
-                    "Dividend Yield": 0.71
+                    "Price Earnings Ratio": 36.094593,
+                    "Price to Book Ratio": 10.390868,
+                    "Dividend Yield": 0.72
                 }
             },
             "historical_data": {
@@ -426,9 +426,9 @@
                     "Cash Dividends Paid": -7363000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 27.313242,
-                    "Price to Book Ratio": 8.628914,
-                    "Dividend Yield": 0.3
+                    "Price Earnings Ratio": 28.16403,
+                    "Price to Book Ratio": 8.897698,
+                    "Dividend Yield": 0.29
                 }
             },
             "historical_data": {
@@ -613,8 +613,8 @@
                     "Cash Dividends Paid": "N/A - Feld nicht gefunden"
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 33.10155,
-                    "Price to Book Ratio": 6.785497,
+                    "Price Earnings Ratio": 32.891243,
+                    "Price to Book Ratio": 6.732876,
                     "Dividend Yield": "N/A"
                 }
             },
