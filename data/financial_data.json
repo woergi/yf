@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2025-12-30 08:19:37",
+        "date_fetched": "2025-12-31 08:19:36",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -37,8 +37,8 @@
                     "Cash Dividends Paid": -15421000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 36.647926,
-                    "Price to Book Ratio": 54.85073,
+                    "Price Earnings Ratio": 36.605896,
+                    "Price to Book Ratio": 54.71448,
                     "Dividend Yield": 0.38
                 }
             },
@@ -239,8 +239,8 @@
                     "Cash Dividends Paid": -24082000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 34.595173,
-                    "Price to Book Ratio": 9.973383,
+                    "Price Earnings Ratio": 34.7208,
+                    "Price to Book Ratio": 9.981163,
                     "Dividend Yield": 0.75
                 }
             },
@@ -426,8 +426,8 @@
                     "Cash Dividends Paid": -7363000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 30.953602,
-                    "Price to Book Ratio": 9.788655,
+                    "Price Earnings Ratio": 30.951675,
+                    "Price to Book Ratio": 9.7977085,
                     "Dividend Yield": 0.27
                 }
             },
@@ -484,19 +484,6 @@
                         "Total Non Current Liabilities Net Minority Interest": 43379000000,
                         "Total Liabilities Net Minority Interest": 107633000000,
                         "Stockholders Equity": 251635000000
-                    },
-                    "2020": {
-                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
-                        "Receivables": "N/A",
-                        "Current Assets": "N/A",
-                        "Total Non Current Assets": "N/A",
-                        "Total Assets": "N/A",
-                        "Payables": "N/A",
-                        "Current Debt": "N/A",
-                        "Current Liabilities": "N/A",
-                        "Total Non Current Liabilities Net Minority Interest": "N/A",
-                        "Total Liabilities Net Minority Interest": "N/A",
-                        "Stockholders Equity": "N/A"
                     }
                 },
                 "IncomeStatement": {
@@ -557,9 +544,6 @@
                     },
                     "2021": {
                         "Cash Dividends Paid": "N/A"
-                    },
-                    "2020": {
-                        "Cash Dividends Paid": "N/A"
                     }
                 },
                 "Valuation": {
@@ -613,8 +597,8 @@
                     "Cash Dividends Paid": "N/A - Feld nicht gefunden"
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 32.77825,
-                    "Price to Book Ratio": 6.7097464,
+                    "Price Earnings Ratio": 32.889675,
+                    "Price to Book Ratio": 6.723046,
                     "Dividend Yield": "N/A"
                 }
             },
@@ -671,19 +655,6 @@
                         "Total Non Current Liabilities Net Minority Interest": 140038000000,
                         "Total Liabilities Net Minority Interest": 282304000000,
                         "Stockholders Equity": 138245000000
-                    },
-                    "2020": {
-                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
-                        "Receivables": "N/A",
-                        "Current Assets": "N/A",
-                        "Total Non Current Assets": "N/A",
-                        "Total Assets": "N/A",
-                        "Payables": "N/A",
-                        "Current Debt": "N/A",
-                        "Current Liabilities": "N/A",
-                        "Total Non Current Liabilities Net Minority Interest": "N/A",
-                        "Total Liabilities Net Minority Interest": "N/A",
-                        "Stockholders Equity": "N/A"
                     }
                 },
                 "IncomeStatement": {
@@ -730,17 +701,6 @@
                         "Normalized Income": 20551997169,
                         "EBIT": 39960000000,
                         "EBITDA": 74393000000
-                    },
-                    "2020": {
-                        "Total Revenue": "N/A",
-                        "Gross Profit": "N/A",
-                        "Operating Income": "N/A",
-                        "Pretax Income": "N/A",
-                        "Net Income Continuous Operations": "N/A",
-                        "Net Income Common Stockholders": "N/A",
-                        "Normalized Income": "N/A",
-                        "EBIT": "N/A",
-                        "EBITDA": "N/A"
                     }
                 },
                 "CashFlowStatement": {
@@ -771,10 +731,6 @@
                         "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
                     },
                     "2021": {
-                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
-                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
-                    },
-                    "2020": {
                         "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
                         "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
                     }
