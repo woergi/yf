@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2026-01-25 08:17:48",
+        "date_fetched": "2026-01-26 08:21:13",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -426,8 +426,8 @@
                     "Cash Dividends Paid": -7363000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 32.37216,
-                    "Price to Book Ratio": 10.237255,
+                    "Price Earnings Ratio": 32.372654,
+                    "Price to Book Ratio": 10.2374115,
                     "Dividend Yield": 0.26
                 }
             },
