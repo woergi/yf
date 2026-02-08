@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2026-02-07 08:21:10",
+        "date_fetched": "2026-02-08 08:22:50",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -400,30 +400,30 @@
             "latest_data": {
                 "BalanceSheet": {
                     "Cash, Cash Equivalents And Short Term Investments": "N/A - Feld nicht gefunden",
-                    "Receivables": 52340000000,
-                    "Current Assets": 163711000000,
-                    "Total Non Current Assets": 286545000000,
-                    "Total Assets": 450256000000,
-                    "Payables": 10892000000,
+                    "Receivables": 62886000000,
+                    "Current Assets": 206038000000,
+                    "Total Non Current Assets": 389243000000,
+                    "Total Assets": 595281000000,
+                    "Payables": 13673000000,
                     "Current Debt": "N/A - Feld nicht gefunden",
-                    "Current Liabilities": 89122000000,
-                    "Total Non Current Liabilities Net Minority Interest": 36050000000,
-                    "Total Liabilities Net Minority Interest": 125172000000,
-                    "Stockholders Equity": 325084000000
+                    "Current Liabilities": 102745000000,
+                    "Total Non Current Liabilities Net Minority Interest": 77271000000,
+                    "Total Liabilities Net Minority Interest": 180016000000,
+                    "Stockholders Equity": 415265000000
                 },
                 "IncomeStatement": {
-                    "Total Revenue": "N/A - Wert fehlt",
-                    "Gross Profit": "N/A - Wert fehlt",
-                    "Operating Income": "N/A - Wert fehlt",
-                    "Pretax Income": "N/A - Wert fehlt",
-                    "Net Income Continuous Operations": "N/A - Wert fehlt",
-                    "Net Income Common Stockholders": "N/A - Wert fehlt",
-                    "Normalized Income": "N/A - Wert fehlt",
-                    "EBIT": "N/A - Wert fehlt",
-                    "EBITDA": "N/A - Wert fehlt"
+                    "Total Revenue": 402836000000,
+                    "Gross Profit": 240301000000,
+                    "Operating Income": 129039000000,
+                    "Pretax Income": 158826000000,
+                    "Net Income Continuous Operations": 132170000000,
+                    "Net Income Common Stockholders": 132170000000,
+                    "Normalized Income": 111770192000,
+                    "EBIT": 159562000000,
+                    "EBITDA": 180698000000
                 },
                 "CashFlowStatement": {
-                    "Cash Dividends Paid": -7363000000
+                    "Cash Dividends Paid": -10049000000
                 },
                 "Valuation": {
                     "Price Earnings Ratio": 29.839186,
@@ -433,13 +433,26 @@
             },
             "historical_data": {
                 "BalanceSheet": {
+                    "2025": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 62886000000,
+                        "Current Assets": 206038000000,
+                        "Total Non Current Assets": 389243000000,
+                        "Total Assets": 595281000000,
+                        "Payables": 13673000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 102745000000,
+                        "Total Non Current Liabilities Net Minority Interest": 77271000000,
+                        "Total Liabilities Net Minority Interest": 180016000000,
+                        "Stockholders Equity": 415265000000
+                    },
                     "2024": {
                         "Cash, Cash Equivalents And Short Term Investments": "N/A",
                         "Receivables": 52340000000,
                         "Current Assets": 163711000000,
                         "Total Non Current Assets": 286545000000,
                         "Total Assets": 450256000000,
-                        "Payables": 10892000000,
+                        "Payables": 14758000000,
                         "Current Debt": "N/A",
                         "Current Liabilities": 89122000000,
                         "Total Non Current Liabilities Net Minority Interest": 36050000000,
@@ -474,29 +487,29 @@
                     },
                     "2021": {
                         "Cash, Cash Equivalents And Short Term Investments": "N/A",
-                        "Receivables": 39304000000,
-                        "Current Assets": 188143000000,
-                        "Total Non Current Assets": 171125000000,
-                        "Total Assets": 359268000000,
-                        "Payables": 6037000000,
+                        "Receivables": "N/A",
+                        "Current Assets": "N/A",
+                        "Total Non Current Assets": "N/A",
+                        "Total Assets": "N/A",
+                        "Payables": "N/A",
                         "Current Debt": "N/A",
-                        "Current Liabilities": 64254000000,
-                        "Total Non Current Liabilities Net Minority Interest": 43379000000,
-                        "Total Liabilities Net Minority Interest": 107633000000,
-                        "Stockholders Equity": 251635000000
+                        "Current Liabilities": "N/A",
+                        "Total Non Current Liabilities Net Minority Interest": "N/A",
+                        "Total Liabilities Net Minority Interest": "N/A",
+                        "Stockholders Equity": "N/A"
                     }
                 },
                 "IncomeStatement": {
                     "2025": {
-                        "Total Revenue": "N/A",
-                        "Gross Profit": "N/A",
-                        "Operating Income": "N/A",
-                        "Pretax Income": "N/A",
-                        "Net Income Continuous Operations": "N/A",
-                        "Net Income Common Stockholders": "N/A",
-                        "Normalized Income": "N/A",
-                        "EBIT": "N/A",
-                        "EBITDA": "N/A"
+                        "Total Revenue": 402836000000,
+                        "Gross Profit": 240301000000,
+                        "Operating Income": 129039000000,
+                        "Pretax Income": 158826000000,
+                        "Net Income Continuous Operations": 132170000000,
+                        "Net Income Common Stockholders": 132170000000,
+                        "Normalized Income": 111770192000,
+                        "EBIT": 159562000000,
+                        "EBITDA": 180698000000
                     },
                     "2024": {
                         "Total Revenue": 350018000000,
@@ -532,18 +545,21 @@
                         "EBITDA": 85160000000
                     },
                     "2021": {
-                        "Total Revenue": 257637000000,
-                        "Gross Profit": 146698000000,
-                        "Operating Income": 78714000000,
-                        "Pretax Income": 90734000000,
-                        "Net Income Continuous Operations": 76033000000,
-                        "Net Income Common Stockholders": 76033000000,
-                        "Normalized Income": 65671968000,
-                        "EBIT": 91080000000,
-                        "EBITDA": 103521000000
+                        "Total Revenue": "N/A",
+                        "Gross Profit": "N/A",
+                        "Operating Income": "N/A",
+                        "Pretax Income": "N/A",
+                        "Net Income Continuous Operations": "N/A",
+                        "Net Income Common Stockholders": "N/A",
+                        "Normalized Income": "N/A",
+                        "EBIT": "N/A",
+                        "EBITDA": "N/A"
                     }
                 },
                 "CashFlowStatement": {
+                    "2025": {
+                        "Cash Dividends Paid": -10049000000
+                    },
                     "2024": {
                         "Cash Dividends Paid": -7363000000
                     },
@@ -598,15 +614,15 @@
                     "Stockholders Equity": 285970000000
                 },
                 "IncomeStatement": {
-                    "Total Revenue": 637959000000,
-                    "Gross Profit": 311671000000,
-                    "Operating Income": 68593000000,
-                    "Pretax Income": 68614000000,
-                    "Net Income Continuous Operations": 59248000000,
-                    "Net Income Common Stockholders": 59248000000,
-                    "Normalized Income": 60830028755,
-                    "EBIT": 71020000000,
-                    "EBITDA": 123815000000
+                    "Total Revenue": "N/A - Wert fehlt",
+                    "Gross Profit": "N/A - Wert fehlt",
+                    "Operating Income": "N/A - Wert fehlt",
+                    "Pretax Income": "N/A - Wert fehlt",
+                    "Net Income Continuous Operations": "N/A - Wert fehlt",
+                    "Net Income Common Stockholders": "N/A - Wert fehlt",
+                    "Normalized Income": "N/A - Wert fehlt",
+                    "EBIT": "N/A - Wert fehlt",
+                    "EBITDA": "N/A - Wert fehlt"
                 },
                 "CashFlowStatement": {
                     "Cash Dividends Paid": "N/A - Feld nicht gefunden"
@@ -673,6 +689,17 @@
                     }
                 },
                 "IncomeStatement": {
+                    "2025": {
+                        "Total Revenue": "N/A",
+                        "Gross Profit": "N/A",
+                        "Operating Income": "N/A",
+                        "Pretax Income": "N/A",
+                        "Net Income Continuous Operations": "N/A",
+                        "Net Income Common Stockholders": "N/A",
+                        "Normalized Income": "N/A",
+                        "EBIT": "N/A",
+                        "EBITDA": "N/A"
+                    },
                     "2024": {
                         "Total Revenue": 637959000000,
                         "Gross Profit": 311671000000,
@@ -733,6 +760,10 @@
                     }
                 },
                 "Valuation": {
+                    "2025": {
+                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
+                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
+                    },
                     "2024": {
                         "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
                         "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
