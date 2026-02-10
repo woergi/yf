@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2026-02-09 08:40:09",
+        "date_fetched": "2026-02-10 08:40:33",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -37,9 +37,9 @@
                     "Cash Dividends Paid": -15421000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 35.205063,
-                    "Price to Book Ratio": 46.368786,
-                    "Dividend Yield": 0.37
+                    "Price Earnings Ratio": 34.71808,
+                    "Price to Book Ratio": 45.78526,
+                    "Dividend Yield": 0.38
                 }
             },
             "historical_data": {
@@ -239,9 +239,9 @@
                     "Cash Dividends Paid": -24082000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 25.118347,
-                    "Price to Book Ratio": 7.6240616,
-                    "Dividend Yield": 0.91
+                    "Price Earnings Ratio": 25.914787,
+                    "Price to Book Ratio": 7.860876,
+                    "Dividend Yield": 0.88
                 }
             },
             "historical_data": {
@@ -426,8 +426,8 @@
                     "Cash Dividends Paid": -10049000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 29.839186,
-                    "Price to Book Ratio": 9.398305,
+                    "Price Earnings Ratio": 30.02963,
+                    "Price to Book Ratio": 9.440805,
                     "Dividend Yield": 0.26
                 }
             },
@@ -602,39 +602,52 @@
             "latest_data": {
                 "BalanceSheet": {
                     "Cash, Cash Equivalents And Short Term Investments": "N/A - Feld nicht gefunden",
-                    "Receivables": 55451000000,
-                    "Current Assets": 190867000000,
-                    "Total Non Current Assets": 434027000000,
-                    "Total Assets": 624894000000,
-                    "Payables": 94363000000,
+                    "Receivables": 67729000000,
+                    "Current Assets": 229083000000,
+                    "Total Non Current Assets": 588959000000,
+                    "Total Assets": 818042000000,
+                    "Payables": 121909000000,
                     "Current Debt": "N/A - Feld nicht gefunden",
-                    "Current Liabilities": 179431000000,
-                    "Total Non Current Liabilities Net Minority Interest": 159493000000,
-                    "Total Liabilities Net Minority Interest": 338924000000,
-                    "Stockholders Equity": 285970000000
+                    "Current Liabilities": 218005000000,
+                    "Total Non Current Liabilities Net Minority Interest": 188972000000,
+                    "Total Liabilities Net Minority Interest": 406977000000,
+                    "Stockholders Equity": 411065000000
                 },
                 "IncomeStatement": {
-                    "Total Revenue": "N/A - Wert fehlt",
-                    "Gross Profit": "N/A - Wert fehlt",
-                    "Operating Income": "N/A - Wert fehlt",
-                    "Pretax Income": "N/A - Wert fehlt",
-                    "Net Income Continuous Operations": "N/A - Wert fehlt",
-                    "Net Income Common Stockholders": "N/A - Wert fehlt",
-                    "Normalized Income": "N/A - Wert fehlt",
-                    "EBIT": "N/A - Wert fehlt",
-                    "EBITDA": "N/A - Wert fehlt"
+                    "Total Revenue": 716924000000,
+                    "Gross Profit": 360510000000,
+                    "Operating Income": 79975000000,
+                    "Pretax Income": 97311000000,
+                    "Net Income Continuous Operations": 77670000000,
+                    "Net Income Common Stockholders": 77670000000,
+                    "Normalized Income": 65354930994,
+                    "EBIT": 99585000000,
+                    "EBITDA": 165341000000
                 },
                 "CashFlowStatement": {
                     "Cash Dividends Paid": "N/A - Feld nicht gefunden"
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 29.333334,
-                    "Price to Book Ratio": 5.490524,
+                    "Price Earnings Ratio": 29.06964,
+                    "Price to Book Ratio": 5.448755,
                     "Dividend Yield": "N/A"
                 }
             },
             "historical_data": {
                 "BalanceSheet": {
+                    "2025": {
+                        "Cash, Cash Equivalents And Short Term Investments": "N/A",
+                        "Receivables": 67729000000,
+                        "Current Assets": 229083000000,
+                        "Total Non Current Assets": 588959000000,
+                        "Total Assets": 818042000000,
+                        "Payables": 121909000000,
+                        "Current Debt": "N/A",
+                        "Current Liabilities": 218005000000,
+                        "Total Non Current Liabilities Net Minority Interest": 188972000000,
+                        "Total Liabilities Net Minority Interest": 406977000000,
+                        "Stockholders Equity": 411065000000
+                    },
                     "2024": {
                         "Cash, Cash Equivalents And Short Term Investments": "N/A",
                         "Receivables": 55451000000,
@@ -676,29 +689,29 @@
                     },
                     "2021": {
                         "Cash, Cash Equivalents And Short Term Investments": "N/A",
-                        "Receivables": 32891000000,
-                        "Current Assets": 161580000000,
-                        "Total Non Current Assets": 258969000000,
-                        "Total Assets": 420549000000,
-                        "Payables": 78664000000,
+                        "Receivables": "N/A",
+                        "Current Assets": "N/A",
+                        "Total Non Current Assets": "N/A",
+                        "Total Assets": "N/A",
+                        "Payables": "N/A",
                         "Current Debt": "N/A",
-                        "Current Liabilities": 142266000000,
-                        "Total Non Current Liabilities Net Minority Interest": 140038000000,
-                        "Total Liabilities Net Minority Interest": 282304000000,
-                        "Stockholders Equity": 138245000000
+                        "Current Liabilities": "N/A",
+                        "Total Non Current Liabilities Net Minority Interest": "N/A",
+                        "Total Liabilities Net Minority Interest": "N/A",
+                        "Stockholders Equity": "N/A"
                     }
                 },
                 "IncomeStatement": {
                     "2025": {
-                        "Total Revenue": "N/A",
-                        "Gross Profit": "N/A",
-                        "Operating Income": "N/A",
-                        "Pretax Income": "N/A",
-                        "Net Income Continuous Operations": "N/A",
-                        "Net Income Common Stockholders": "N/A",
-                        "Normalized Income": "N/A",
-                        "EBIT": "N/A",
-                        "EBITDA": "N/A"
+                        "Total Revenue": 716924000000,
+                        "Gross Profit": 360510000000,
+                        "Operating Income": 79975000000,
+                        "Pretax Income": 97311000000,
+                        "Net Income Continuous Operations": 77670000000,
+                        "Net Income Common Stockholders": 77670000000,
+                        "Normalized Income": 65354930994,
+                        "EBIT": 99585000000,
+                        "EBITDA": 165341000000
                     },
                     "2024": {
                         "Total Revenue": 637959000000,
@@ -707,7 +720,7 @@
                         "Pretax Income": 68614000000,
                         "Net Income Continuous Operations": 59248000000,
                         "Net Income Common Stockholders": 59248000000,
-                        "Normalized Income": 60830028755,
+                        "Normalized Income": 60836083539,
                         "EBIT": 71020000000,
                         "EBITDA": 123815000000
                     },
@@ -718,7 +731,7 @@
                         "Pretax Income": 37557000000,
                         "Net Income Continuous Operations": 30425000000,
                         "Net Income Common Stockholders": 30425000000,
-                        "Normalized Income": 29521380035,
+                        "Normalized Income": 29574057432,
                         "EBIT": 40739000000,
                         "EBITDA": 89402000000
                     },
@@ -732,20 +745,12 @@
                         "Normalized Income": 10128140000,
                         "EBIT": -3569000000,
                         "EBITDA": 38352000000
-                    },
-                    "2021": {
-                        "Total Revenue": 469822000000,
-                        "Gross Profit": 197478000000,
-                        "Operating Income": 24879000000,
-                        "Pretax Income": 38151000000,
-                        "Net Income Continuous Operations": 33364000000,
-                        "Net Income Common Stockholders": 33364000000,
-                        "Normalized Income": 20551997169,
-                        "EBIT": 39960000000,
-                        "EBITDA": 74393000000
                     }
                 },
                 "CashFlowStatement": {
+                    "2025": {
+                        "Cash Dividends Paid": "N/A"
+                    },
                     "2024": {
                         "Cash Dividends Paid": "N/A"
                     },
@@ -773,10 +778,6 @@
                         "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
                     },
                     "2022": {
-                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
-                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
-                    },
-                    "2021": {
                         "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
                         "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
                     }
