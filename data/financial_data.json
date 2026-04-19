@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2026-04-18 08:38:59",
+        "date_fetched": "2026-04-19 08:42:59",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -239,7 +239,7 @@
                     "Cash Dividends Paid": -24082000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 26.309273,
+                    "Price Earnings Ratio": 26.457449,
                     "Price to Book Ratio": 8.035542,
                     "Dividend Yield": 0.86
                 }
@@ -408,7 +408,7 @@
                     "Current Debt": "N/A - Feld nicht gefunden",
                     "Current Liabilities": 102745000000,
                     "Total Non Current Liabilities Net Minority Interest": 77271000000,
-                    "Total Liabilities Net Minority Interest": 180016000000,
+                    "Total Liabilities Net Minority Interest": "N/A - Feld nicht gefunden",
                     "Stockholders Equity": 415265000000
                 },
                 "IncomeStatement": {
@@ -443,7 +443,7 @@
                         "Current Debt": "N/A",
                         "Current Liabilities": 102745000000,
                         "Total Non Current Liabilities Net Minority Interest": 77271000000,
-                        "Total Liabilities Net Minority Interest": 180016000000,
+                        "Total Liabilities Net Minority Interest": "N/A",
                         "Stockholders Equity": 415265000000
                     },
                     "2024": {
@@ -456,7 +456,7 @@
                         "Current Debt": "N/A",
                         "Current Liabilities": 89122000000,
                         "Total Non Current Liabilities Net Minority Interest": 36050000000,
-                        "Total Liabilities Net Minority Interest": 125172000000,
+                        "Total Liabilities Net Minority Interest": "N/A",
                         "Stockholders Equity": 325084000000
                     },
                     "2023": {
@@ -469,7 +469,7 @@
                         "Current Debt": "N/A",
                         "Current Liabilities": 81814000000,
                         "Total Non Current Liabilities Net Minority Interest": 37199000000,
-                        "Total Liabilities Net Minority Interest": 119013000000,
+                        "Total Liabilities Net Minority Interest": "N/A",
                         "Stockholders Equity": 283379000000
                     },
                     "2022": {
@@ -482,7 +482,7 @@
                         "Current Debt": "N/A",
                         "Current Liabilities": 69300000000,
                         "Total Non Current Liabilities Net Minority Interest": 39820000000,
-                        "Total Liabilities Net Minority Interest": 109120000000,
+                        "Total Liabilities Net Minority Interest": "N/A",
                         "Stockholders Equity": 256144000000
                     },
                     "2021": {
