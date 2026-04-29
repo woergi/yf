@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2026-04-28 10:06:23",
+        "date_fetched": "2026-04-29 09:57:50",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -37,9 +37,9 @@
                     "Cash Dividends Paid": -15421000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 33.917618,
-                    "Price to Book Ratio": 44.616535,
-                    "Dividend Yield": 0.39
+                    "Price Earnings Ratio": 34.267086,
+                    "Price to Book Ratio": 45.133377,
+                    "Dividend Yield": 0.38
                 }
             },
             "historical_data": {
@@ -239,9 +239,9 @@
                     "Cash Dividends Paid": -24082000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 26.601128,
-                    "Price to Book Ratio": 8.074123,
-                    "Dividend Yield": 0.86
+                    "Price Earnings Ratio": 26.878521,
+                    "Price to Book Ratio": 8.158319,
+                    "Dividend Yield": 0.85
                 }
             },
             "historical_data": {
@@ -426,8 +426,8 @@
                     "Cash Dividends Paid": -10049000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 32.34903,
-                    "Price to Book Ratio": 10.1982355,
+                    "Price Earnings Ratio": 32.357075,
+                    "Price to Book Ratio": 10.181934,
                     "Dividend Yield": 0.24
                 }
             },
@@ -628,8 +628,8 @@
                     "Cash Dividends Paid": "N/A - Feld nicht gefunden"
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 36.367687,
-                    "Price to Book Ratio": 6.8166866,
+                    "Price Earnings Ratio": 36.220364,
+                    "Price to Book Ratio": 6.7796173,
                     "Dividend Yield": "N/A"
                 }
             },
