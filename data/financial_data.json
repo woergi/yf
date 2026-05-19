@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2026-05-18 11:37:46",
+        "date_fetched": "2026-05-19 10:54:02",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -37,8 +37,8 @@
                     "Cash Dividends Paid": -15421000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 36.347458,
-                    "Price to Book Ratio": 41.353996,
+                    "Price Earnings Ratio": 36.101818,
+                    "Price to Book Ratio": 41.02479,
                     "Dividend Yield": 0.36
                 }
             },
@@ -239,8 +239,8 @@
                     "Cash Dividends Paid": -24082000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 25.129244,
-                    "Price to Book Ratio": 7.5644083,
+                    "Price Earnings Ratio": 25.255814,
+                    "Price to Book Ratio": 7.5934525,
                     "Dividend Yield": 0.86
                 }
             },
@@ -408,7 +408,7 @@
                     "Current Debt": "N/A - Feld nicht gefunden",
                     "Current Liabilities": 102745000000,
                     "Total Non Current Liabilities Net Minority Interest": 77271000000,
-                    "Total Liabilities Net Minority Interest": "N/A - Feld nicht gefunden",
+                    "Total Liabilities Net Minority Interest": 180016000000,
                     "Stockholders Equity": 415265000000
                 },
                 "IncomeStatement": {
@@ -426,8 +426,8 @@
                     "Cash Dividends Paid": -10049000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 30.311687,
-                    "Price to Book Ratio": 10.041504,
+                    "Price Earnings Ratio": 30.300762,
+                    "Price to Book Ratio": 10.045553,
                     "Dividend Yield": 0.22
                 }
             },
@@ -443,7 +443,7 @@
                         "Current Debt": "N/A",
                         "Current Liabilities": 102745000000,
                         "Total Non Current Liabilities Net Minority Interest": 77271000000,
-                        "Total Liabilities Net Minority Interest": "N/A",
+                        "Total Liabilities Net Minority Interest": 180016000000,
                         "Stockholders Equity": 415265000000
                     },
                     "2024": {
@@ -456,7 +456,7 @@
                         "Current Debt": "N/A",
                         "Current Liabilities": 89122000000,
                         "Total Non Current Liabilities Net Minority Interest": 36050000000,
-                        "Total Liabilities Net Minority Interest": "N/A",
+                        "Total Liabilities Net Minority Interest": 125172000000,
                         "Stockholders Equity": 325084000000
                     },
                     "2023": {
@@ -469,7 +469,7 @@
                         "Current Debt": "N/A",
                         "Current Liabilities": 81814000000,
                         "Total Non Current Liabilities Net Minority Interest": 37199000000,
-                        "Total Liabilities Net Minority Interest": "N/A",
+                        "Total Liabilities Net Minority Interest": 119013000000,
                         "Stockholders Equity": 283379000000
                     },
                     "2022": {
@@ -482,7 +482,7 @@
                         "Current Debt": "N/A",
                         "Current Liabilities": 69300000000,
                         "Total Non Current Liabilities Net Minority Interest": 39820000000,
-                        "Total Liabilities Net Minority Interest": "N/A",
+                        "Total Liabilities Net Minority Interest": 109120000000,
                         "Stockholders Equity": 256144000000
                     },
                     "2021": {
@@ -613,8 +613,8 @@
                     "Cash Dividends Paid": "N/A - Feld nicht gefunden"
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 31.633533,
-                    "Price to Book Ratio": 6.4278593,
+                    "Price Earnings Ratio": 31.643965,
+                    "Price to Book Ratio": 6.4453797,
                     "Dividend Yield": "N/A"
                 }
             },
