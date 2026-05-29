@@ -67,7 +67,11 @@
             </button>
         </div>
         
-        <p class="text-center mt-4">Zuletzt aktualisiert: <span id="fetchDate" class="fw-bold">...</span></p>
+        <p class="text-center mt-4">
+            <span id="carouselIndex" class="fw-bold">1</span> / <span id="carouselTotal" class="fw-bold">...</span> <span class="text-muted" id="carouselSp500"></span>
+            &nbsp;&mdash;&nbsp;
+            Zuletzt aktualisiert: <span id="fetchDate" class="fw-bold">...</span>
+        </p>
 
     </div>
 
@@ -218,12 +222,12 @@
             })
             .then(data => {
                 const companies = data.companies;
-                const tickers = Object.keys(companies);
+                const tickers = Object.keys(companies).filter(t => companies[t].company_name);
 
                 if (loadingIndicator) {
                     innerContainer.removeChild(loadingIndicator);
                 }
-                document.getElementById('fetchDate').textContent = data.metadata.date_fetched;
+                document.getElementById('fetchDate').textContent = data.metadata.last_run || data.metadata.date_fetched || "unbekannt";
 
                 tickers.forEach((ticker, index) => {
                     const companyData = companies[ticker];
@@ -265,7 +269,7 @@
                     };
 
                     const historicalYears = Object.keys(historicalBS).sort((a, b) => b - a);
-                    const displayedPeriods = ['Aktuell', ...historicalYears.slice(0, 3)];
+                    const displayedPeriods = ['Aktuell', ...historicalYears];
 
                     const periodData = {};
                     displayedPeriods.forEach(period => {
@@ -462,14 +466,24 @@
                     innerContainer.appendChild(item);
                 });
                 
+                // Gesamtzahl setzen
+                document.getElementById('carouselTotal').textContent = tickers.length;
+                const sp500Total = data.metadata.sp500_total;
+                if (sp500Total && tickers.length < sp500Total) {
+                    document.getElementById('carouselSp500').textContent = `(${sp500Total} S&P 500 gesamt)`;
+                }
+
                 // WICHTIG: Karussell neu initialisieren
                 if (carouselElement) {
                     const carouselInstance = bootstrap.Carousel.getInstance(carouselElement);
                     if (carouselInstance) {
                         carouselInstance.dispose();
                     }
-                    new bootstrap.Carousel(carouselElement, {
-                        interval: false 
+                    new bootstrap.Carousel(carouselElement, { interval: false });
+
+                    // Index bei Slide-Wechsel aktualisieren
+                    carouselElement.addEventListener('slide.bs.carousel', event => {
+                        document.getElementById('carouselIndex').textContent = event.to + 1;
                     });
                 }
             })
