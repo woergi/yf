@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date_fetched": "2026-04-25 08:42:07",
+        "date_fetched": "2026-05-28 11:29:17",
         "tickers_requested": 4,
         "tickers_succeeded": 4,
         "tickers_failed": []
@@ -37,9 +37,9 @@
                     "Cash Dividends Paid": -15421000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 34.35488,
-                    "Price to Book Ratio": 45.19173,
-                    "Dividend Yield": 0.38
+                    "Price Earnings Ratio": 37.587666,
+                    "Price to Book Ratio": 42.816803,
+                    "Dividend Yield": 0.35
                 }
             },
             "historical_data": {
@@ -239,9 +239,9 @@
                     "Cash Dividends Paid": -24082000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 26.588602,
-                    "Price to Book Ratio": 8.070322,
-                    "Dividend Yield": 0.86
+                    "Price Earnings Ratio": 24.563692,
+                    "Price to Book Ratio": 7.3985696,
+                    "Dividend Yield": 0.88
                 }
             },
             "historical_data": {
@@ -418,7 +418,7 @@
                     "Pretax Income": 158826000000,
                     "Net Income Continuous Operations": 132170000000,
                     "Net Income Common Stockholders": 132170000000,
-                    "Normalized Income": 111770192000,
+                    "Normalized Income": 112003984000,
                     "EBIT": 159562000000,
                     "EBITDA": 180698000000
                 },
@@ -426,9 +426,9 @@
                     "Cash Dividends Paid": -10049000000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 31.859388,
-                    "Price to Book Ratio": 10.025325,
-                    "Dividend Yield": 0.24
+                    "Price Earnings Ratio": 29.681677,
+                    "Price to Book Ratio": 9.840309,
+                    "Dividend Yield": 0.23
                 }
             },
             "historical_data": {
@@ -507,7 +507,7 @@
                         "Pretax Income": 158826000000,
                         "Net Income Continuous Operations": 132170000000,
                         "Net Income Common Stockholders": 132170000000,
-                        "Normalized Income": 111770192000,
+                        "Normalized Income": 112003984000,
                         "EBIT": 159562000000,
                         "EBITDA": 180698000000
                     },
@@ -518,7 +518,7 @@
                         "Pretax Income": 119815000000,
                         "Net Income Continuous Operations": 100118000000,
                         "Net Income Common Stockholders": 100118000000,
-                        "Normalized Income": 98384136000,
+                        "Normalized Income": 98226968000,
                         "EBIT": 120083000000,
                         "EBITDA": 135394000000
                     },
@@ -529,7 +529,7 @@
                         "Pretax Income": 85717000000,
                         "Net Income Continuous Operations": 73795000000,
                         "Net Income Common Stockholders": 73795000000,
-                        "Normalized Income": 76110229000,
+                        "Normalized Income": 75569521000,
                         "EBIT": 86025000000,
                         "EBITDA": 97971000000
                     },
@@ -540,20 +540,9 @@
                         "Pretax Income": 71328000000,
                         "Net Income Continuous Operations": 59972000000,
                         "Net Income Common Stockholders": 59972000000,
-                        "Normalized Income": 65446910000,
+                        "Normalized Income": 65163493000,
                         "EBIT": 71685000000,
                         "EBITDA": 85160000000
-                    },
-                    "2021": {
-                        "Total Revenue": "N/A",
-                        "Gross Profit": "N/A",
-                        "Operating Income": "N/A",
-                        "Pretax Income": "N/A",
-                        "Net Income Continuous Operations": "N/A",
-                        "Net Income Common Stockholders": "N/A",
-                        "Normalized Income": "N/A",
-                        "EBIT": "N/A",
-                        "EBITDA": "N/A"
                     }
                 },
                 "CashFlowStatement": {
@@ -587,10 +576,6 @@
                         "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
                     },
                     "2022": {
-                        "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
-                        "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
-                    },
-                    "2021": {
                         "Price Earnings Ratio": "N/A (Historische Berechnung n\u00f6tig)",
                         "Price to Book Ratio": "N/A (Historische Berechnung n\u00f6tig)"
                     }
@@ -628,8 +613,8 @@
                     "Cash Dividends Paid": "N/A - Feld nicht gefunden"
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 36.76741,
-                    "Price to Book Ratio": 6.8916097,
+                    "Price Earnings Ratio": 31.647264,
+                    "Price to Book Ratio": 6.6154823,
                     "Dividend Yield": "N/A"
                 }
             },
