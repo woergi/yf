@@ -1,0 +1,11 @@
+# Normalize line endings to LF for all text files
+* text=auto eol=lf
+
+# Force LF for specific file types
+*.py eol=lf
+*.yml eol=lf
+*.yaml eol=lf
+*.json eol=lf
+*.html eol=lf
+*.txt eol=lf
+*.md eol=lf
