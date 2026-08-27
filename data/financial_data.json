@@ -1,11 +1,11 @@
 {
     "metadata": {
-        "last_run": "2026-08-26T08:31:34",
-        "last_run_duration_seconds": 1946,
+        "last_run": "2026-08-27T18:39:00",
+        "last_run_duration_seconds": 0,
         "sp500_total": 503,
         "total_stored": 511,
-        "last_run_updated": 511,
-        "last_run_skipped_fresh": 0,
+        "last_run_updated": 0,
+        "last_run_skipped_fresh": 511,
         "last_run_failed": [],
         "sp500_last_fetched": "2026-08-26T08:31:34"
     },
