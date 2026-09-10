@@ -1,15 +1,12 @@
 {
     "metadata": {
-        "last_run": "2026-09-09T12:34:50",
-        "last_run_duration_seconds": 1944,
+        "last_run": "2026-09-10T12:30:37",
+        "last_run_duration_seconds": 8,
         "sp500_total": 503,
         "total_stored": 511,
-        "last_run_updated": 509,
-        "last_run_skipped_fresh": 0,
-        "last_run_failed": [
-            "PHM",
-            "SHW"
-        ],
+        "last_run_updated": 2,
+        "last_run_skipped_fresh": 509,
+        "last_run_failed": [],
         "sp500_last_fetched": "2026-09-09T12:34:50"
     },
     "companies": {
@@ -71986,7 +71983,7 @@
         },
         "PHM": {
             "company_name": "PulteGroup, Inc.",
-            "last_updated": "2026-08-26T08:55:02",
+            "last_updated": "2026-09-10T12:30:38",
             "latest_data": {
                 "BalanceSheet": {
                     "Cash, Cash Equivalents And Short Term Investments": "N/A - Feld nicht gefunden",
@@ -72016,9 +72013,9 @@
                     "Cash Dividends Paid": -176684000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 13.244939,
-                    "Price to Book Ratio": 1.8871406,
-                    "Dividend Yield": 0.8
+                    "Price Earnings Ratio": 12.14811,
+                    "Price to Book Ratio": 1.7150973,
+                    "Dividend Yield": 0.87
                 }
             },
             "historical_data": {
@@ -79462,7 +79459,7 @@
         },
         "SHW": {
             "company_name": "The Sherwin-Williams Company",
-            "last_updated": "2026-08-26T08:57:35",
+            "last_updated": "2026-09-10T12:30:42",
             "latest_data": {
                 "BalanceSheet": {
                     "Cash, Cash Equivalents And Short Term Investments": "N/A - Feld nicht gefunden",
@@ -79492,9 +79489,9 @@
                     "Cash Dividends Paid": -789800000
                 },
                 "Valuation": {
-                    "Price Earnings Ratio": 31.946217,
-                    "Price to Book Ratio": 21.940151,
-                    "Dividend Yield": 0.92
+                    "Price Earnings Ratio": 29.579336,
+                    "Price to Book Ratio": 20.073875,
+                    "Dividend Yield": 1.0
                 }
             },
             "historical_data": {
